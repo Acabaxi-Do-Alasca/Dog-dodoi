@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br" data-protegida>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel | Dog Dodói</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap">
+    <link rel="stylesheet" href="../styles/DashBoard.css">
+    <link rel="stylesheet" href="../styles/componentes.css">
+    <script src="../js/storage.js"></script>
+    <script src="../js/util.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/dashboard.js" defer></script>
+</head>
+<body>
+    <header>
+        <figure>
+            <a href="dashBoard.html"><img src="../img/logo.png" alt="Dog Dodói - painel"></a>
+        </figure>
+        <nav>
+            <a href="index.html" data-sair>Sair</a>
+        </nav>
+    </header>
+
+<section>
+    <aside>
+        <nav aria-label="Menu do painel">
+            <a href="Register.html">Cadastrar usuários</a>
+            <a href="listaUsuarios.html">Listar usuários</a>
+            <a href="cliente.html">Cadastrar clientes</a>
+            <a href="listaClientes.html">Listar clientes</a>
+            <a href="consultas.html">Cadastrar consultas</a>
+            <a href="listaConsultas.html">Listar consultas</a>
+        </nav>
+    </aside>
+
+    <main>
+        <h1 id="saudacao" class="titulo-pagina">Olá!</h1>
+
+        <div class="cards">
+            <a class="card card-clientes" href="listaClientes.html">
+                <span class="card-titulo">Cadastro clientes</span>
+                <strong class="card-numero" id="total-clientes">0</strong>
+                <span class="card-descricao">Clientes cadastrados</span>
+            </a>
+            <a class="card card-usuarios" href="listaUsuarios.html">
+                <span class="card-titulo">Cadastro usuários</span>
+                <strong class="card-numero" id="total-usuarios">0</strong>
+                <span class="card-descricao">Usuários cadastrados</span>
+            </a>
+            <a class="card card-consultas" href="listaConsultas.html">
+                <span class="card-titulo">Cadastro consultas</span>
+                <strong class="card-numero" id="total-agendadas">0</strong>
+                <span class="card-descricao">Consultas agendadas</span>
+            </a>
+            <a class="card card-canceladas" href="listaConsultas.html?filtro=canceladas">
+                <span class="card-titulo">Consultas canceladas</span>
+                <strong class="card-numero" id="total-canceladas">0</strong>
+                <span class="card-descricao">Consultas canceladas</span>
+            </a>
+        </div>
+
+        <h2 class="subtitulo">Próximas consultas</h2>
+        <table class="tabela">
+            <thead>
+                <tr><th>Data</th><th>Hora</th><th>Cliente</th><th>Observações</th></tr>
+            </thead>
+            <tbody id="proximas-consultas"></tbody>
+        </table>
+
+        <h2 class="subtitulo">Pedidos de avaliação grátis</h2>
+        <table class="tabela">
+            <thead>
+                <tr><th>Recebido em</th><th>Nome</th><th>E-mail</th><th>Telefone</th><th><span class="oculto">Ações</span></th></tr>
+            </thead>
+            <tbody id="avaliacoes"></tbody>
+        </table>
+    </main>
+</section>
+
+</body>
+</html>

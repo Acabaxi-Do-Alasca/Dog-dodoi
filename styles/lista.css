@@ -1,0 +1,76 @@
+/* Páginas de listagem (clientes, consultas, usuários). */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+header {
+    background-color: #D8F1FB82;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header img {
+    width: 63px;
+    height: 50px;
+    margin: 11px 0 12px 5vw;
+}
+
+header nav {
+    margin: 0 5vw 0 0;
+}
+
+header nav a {
+    border-radius: 18px;
+    padding: 4px 18px;
+    background-color: #EA1C81;
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px 48px;
+}
+
+.barra-ferramentas {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    color: #424E66;
+}
+
+.barra-ferramentas input,
+.barra-ferramentas select {
+    flex: 1;
+    max-width: 420px;
+    height: 40px;
+    padding: 0 12px;
+    border: 1px solid rgba(0, 0, 0, 0.19);
+    border-radius: 10px;
+    box-shadow: 0px 8px 8px -5px rgba(0, 0, 0, 0.2);
+    font-size: 16px;
+}
+
+.botao {
+    margin-left: auto;
+    padding: 10px 20px;
+    border-radius: 18px;
+    background-color: #EA1C81;
+    color: #FFFFFF;
+    font-weight: 500;
+}

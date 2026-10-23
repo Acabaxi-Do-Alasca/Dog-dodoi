@@ -52,7 +52,7 @@ label{
     font-family: 'Inter', sans-serif;
 }
 
-p{
+h1, h2{
     font-weight: 700;
     font-size: 2.49vw;
     font-family: 'Roboto', sans-serif;
@@ -63,7 +63,7 @@ p{
     margin-top: 2.99vw;
 }
 
-.pri p{
+.pri h1{
     margin-bottom: 0.74vw;
 }
 
@@ -143,7 +143,7 @@ p{
     height: 3.23vw;
 }
 
-.cid2 input{
+.rua input{
     width: 45vw;
     height: 3.23vw;
 }
@@ -151,6 +151,15 @@ p{
 .numero input{
     width: 11.12vw;
     height: 3.23vw;
+}
+
+.bairro input{
+    width: 25.58vw;
+    height: 3.23vw;
+}
+
+.numero{
+    margin-right: 1.7vw;
 }
 
 .arr{
@@ -181,7 +190,7 @@ p{
     margin-right: 1.7vw;
 }
 
-.cid2{
+.rua{
     margin-right:1.7vw;
 }
 
@@ -221,7 +230,8 @@ p{
     .outro,
     .cep,
     .cid,
-    .cid2 {
+    .rua,
+    .numero {
     margin-right: 0px;
     margin-bottom: 10px;
     }
@@ -262,11 +272,15 @@ p{
     width: 100%;
     }
     
-    .cid2 input {
+    .rua input {
     width: 100%;
     }
     
     .numero input {
+    width: 100%;
+    }
+    
+    .bairro input {
     width: 100%;
     }
     }
