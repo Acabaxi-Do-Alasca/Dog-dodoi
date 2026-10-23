@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrar | Dog Dodói</title>
+    <link rel="icon" href="../img/marca.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Outfit:wght@500;600;700&display=swap">
+    <link rel="stylesheet" href="../styles/design/tokens.css">
+    <link rel="stylesheet" href="../styles/design/base.css">
+    <link rel="stylesheet" href="../styles/design/components.css">
+    <link rel="stylesheet" href="../styles/design/public.css">
+    <script src="../js/storage.js"></script>
+    <script src="../js/util.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/icones.js" defer></script>
+    <script src="../js/login.js" defer></script>
+</head>
+<body>
+    <div class="acesso">
+        <aside class="acesso-lateral">
+            <a class="marca marca-clara" href="index.html">
+                <img class="marca-simbolo" src="../img/marca.svg" alt="">
+                <span class="marca-texto">
+                    <span class="marca-nome">dog<b>dodói</b></span>
+                    <span class="marca-sub">Hospital veterinário</span>
+                </span>
+            </a>
+            <h2>Cada paciente cuidado <span>como da família.</span></h2>
+            <p>Acesse o painel da clínica para acompanhar clientes, consultas e pedidos de avaliação.</p>
+            <img class="acesso-foto" src="../img/dog.png" alt="" width="303" height="346">
+        </aside>
+
+        <main class="acesso-conteudo">
+            <div class="acesso-topo">
+                <a class="marca" href="index.html">
+                    <img class="marca-simbolo" src="../img/marca.svg" alt="">
+                    <span class="marca-texto"><span class="marca-nome">dog<b>dodói</b></span></span>
+                </a>
+                <a class="botao botao-fantasma botao-pequeno" href="index.html" data-icone="voltar">Voltar ao site</a>
+            </div>
+
+            <div class="acesso-form">
+                <p class="sobretitulo">Área da equipe</p>
+                <h1>Entrar</h1>
+                <p>Use seu e-mail ou nome de usuário.</p>
+
+                <form id="form-login">
+                    <div class="campo">
+                        <label for="login">E-mail ou usuário</label>
+                        <input class="controle" type="text" id="login" name="login" required autocomplete="username">
+                    </div>
+                    <div class="campo">
+                        <label for="senha">Senha</label>
+                        <input class="controle" type="password" id="senha" name="senha" required autocomplete="current-password">
+                    </div>
+                    <button type="submit" class="botao botao-primario botao-grande botao-bloco">Entrar</button>
+                </form>
+
+                <p class="acesso-alternativa">Ainda não tem cadastro? <a href="Register.html">Criar conta</a></p>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

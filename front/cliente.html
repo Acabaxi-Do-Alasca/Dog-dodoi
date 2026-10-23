@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br" data-protegida>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novo cliente | Dog Dodói</title>
+    <link rel="icon" href="../img/marca.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Outfit:wght@500;600;700&display=swap">
+    <link rel="stylesheet" href="../styles/design/tokens.css">
+    <link rel="stylesheet" href="../styles/design/base.css">
+    <link rel="stylesheet" href="../styles/design/components.css">
+    <link rel="stylesheet" href="../styles/design/admin.css">
+    <script src="../js/storage.js"></script>
+    <script src="../js/util.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/mascaras.js"></script>
+    <script src="../js/icones.js" defer></script>
+    <script src="../js/layout.js" defer></script>
+    <script src="../js/cliente.js" defer></script>
+</head>
+<body class="app" data-secao="clientes">
+    <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
+    <aside class="app-lateral" id="menu-lateral"></aside>
+
+    <div class="app-principal">
+        <header class="app-topo">
+            <button type="button" class="botao botao-secundario botao-pequeno app-menu-botao" data-abrir-menu
+                    aria-controls="menu-lateral" aria-expanded="false" data-icone="menu">Menu</button>
+            <nav class="trilha" aria-label="Você está em">
+                <ol>
+                    <li><a href="dashBoard.html">Painel</a></li>
+                    <li><a href="listaClientes.html">Clientes</a></li>
+                    <li><span aria-current="page" id="trilha-atual">Novo cliente</span></li>
+                </ol>
+            </nav>
+            <a class="botao botao-fantasma botao-pequeno" href="index.html" data-icone="site">Ver site</a>
+        </header>
+
+        <main class="app-conteudo formulario-pagina" id="conteudo">
+            <div class="pagina-cabecalho">
+                <div>
+                    <p class="contexto">Clientes</p>
+                    <h1 id="titulo">Novo cliente</h1>
+                    <p class="descricao">Campos com <span class="obrigatorio">*</span> são obrigatórios.</p>
+                </div>
+            </div>
+
+            <form id="form-cliente" class="painel">
+                <div class="painel-corpo">
+                    <fieldset class="grupo-form">
+                        <legend>Dados pessoais</legend>
+                        <p class="grupo-form-descricao">Informações do tutor responsável pelo pet.</p>
+                        <div class="grade-campos">
+                            <div class="campo col-7">
+                                <label for="nome">Nome completo <span class="obrigatorio" aria-hidden="true">*</span></label>
+                                <input class="controle" type="text" id="nome" name="nome" required autocomplete="off">
+                            </div>
+                            <div class="campo col-5">
+                                <label for="nascimento">Data de nascimento <span class="obrigatorio" aria-hidden="true">*</span></label>
+                                <input class="controle" type="date" id="nascimento" name="nascimento" required>
+                            </div>
+                            <div class="campo col-5">
+                                <label for="cpf">CPF <span class="obrigatorio" aria-hidden="true">*</span></label>
+                                <input class="controle" type="text" id="cpf" name="cpf" required inputmode="numeric"
+                                       data-mascara="cpf" placeholder="000.000.000-00">
+                            </div>
+                            <div class="campo col-7">
+                                <label for="email">E-mail <span class="obrigatorio" aria-hidden="true">*</span></label>
+                                <input class="controle" type="email" id="email" name="email" required autocomplete="off">
+                            </div>
+                            <div class="campo col-6">
+                                <label for="whatsapp">WhatsApp <span class="obrigatorio" aria-hidden="true">*</span></label>
+                                <input class="controle" type="tel" id="whatsapp" name="whatsapp" required minlength="14"
+                                       data-mascara="telefone" placeholder="(18) 99123-1234">
+                            </div>
+                            <div class="campo col-6">
+                                <label for="outro-contato">Outro contato <span class="opcional">(opcional)</span></label>
+                                <input class="controle" type="tel" id="outro-contato" name="outroContato" minlength="14"
+                                       data-mascara="telefone">
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="grupo-form">
+                        <legend>Endereço</legend>
+                        <p class="grupo-form-descricao">Digite o CEP e preenchemos a rua, o bairro e a cidade.</p>
+                        <div class="grade-campos">
+                            <div class="campo col-4">
+                                <label for="cep">CEP <span class="obrigatorio" aria-hidden="true">*</span></label>
+                                <input class="controle" type="text" id="cep" name="cep" required inputmode="numeric" pattern="\d{5}-\d{3}"
+                                       title="CEP no formato 00000-000" data-mascara="cep" placeholder="00000-000">
+                            </div>
+                            <div class="campo col-6">
+                                <label for="cidade">Cidade <span class="obrigatorio" aria-hidden="true">*</span></label>
+                                <input class="controle" type="text" id="cidade" name="cidade" required>
+                            </div>
+                            <div class="campo col-2">
+                                <label for="uf">UF <span class="obrigatorio" aria-hidden="true">*</span></label>
+                                <input class="controle" type="text" id="uf" name="uf" required maxlength="2" pattern="[A-Za-z]{2}" title="Sigla do estado, ex.: SP">
+                            </div>
+                            <div class="campo col-8">
+                                <label for="rua">Rua <span class="obrigatorio" aria-hidden="true">*</span></label>
+                                <input class="controle" type="text" id="rua" name="rua" required>
+                            </div>
+                            <div class="campo col-4">
+                                <label for="numero">Número <span class="obrigatorio" aria-hidden="true">*</span></label>
+                                <input class="controle" type="text" id="numero" name="numero" required>
+                            </div>
+                            <div class="campo col-6">
+                                <label for="bairro">Bairro <span class="obrigatorio" aria-hidden="true">*</span></label>
+                                <input class="controle" type="text" id="bairro" name="bairro" required>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+
+                <div class="painel-rodape">
+                    <button type="button" class="botao botao-secundario" id="cancelar">Cancelar</button>
+                    <button type="submit" class="botao botao-primario">Salvar cliente</button>
+                </div>
+            </form>
+        </main>
+    </div>
+</body>
+</html>

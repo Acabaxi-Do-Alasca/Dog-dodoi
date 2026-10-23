@@ -1,0 +1,356 @@
+/* Painel administrativo: menu lateral, barra superior e conteúdo.
+   O menu é montado pelo js/layout.js dentro de <aside id="menu-lateral">. */
+
+.app {
+    display: grid;
+    grid-template-columns: 272px minmax(0, 1fr);
+    min-height: 100vh;
+    background: var(--fundo);
+}
+
+/* ---------- Menu lateral ---------- */
+.app-lateral {
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding: var(--esp-5) var(--esp-4);
+    overflow-y: auto;
+    background: var(--marinho-900);
+    color: #D6D3EA;
+}
+
+.app-lateral .marca {
+    margin: 0 var(--esp-2) var(--esp-6);
+}
+
+.menu-grupo + .menu-grupo {
+    margin-top: var(--esp-5);
+}
+
+.menu-grupo-titulo {
+    margin: 0 var(--esp-3) var(--esp-2);
+    color: var(--marinho-200);
+    font-size: var(--texto-xs);
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.menu-grupo ul {
+    display: grid;
+    gap: 2px;
+    padding: 0;
+    list-style: none;
+}
+
+.menu-link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: var(--esp-3);
+    padding: 10px var(--esp-3);
+    border-radius: var(--raio-md);
+    color: #E9E7F5;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background var(--transicao), color var(--transicao);
+}
+
+.menu-link svg {
+    width: 20px;
+    height: 20px;
+    flex: none;
+    color: var(--marinho-200);
+}
+
+.menu-link:hover {
+    background: var(--marinho-800);
+    color: #FFFFFF;
+}
+
+.menu-link[aria-current='page'] {
+    background: var(--marinho-700);
+    color: #FFFFFF;
+    font-weight: 700;
+}
+
+.menu-link[aria-current='page'] svg {
+    color: var(--rosa-300);
+}
+
+.menu-link[aria-current='page']::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    bottom: 10px;
+    left: calc(-1 * var(--esp-4));
+    width: 4px;
+    border-radius: 0 4px 4px 0;
+    background: var(--rosa-500);
+}
+
+.menu-usuario {
+    display: flex;
+    align-items: center;
+    gap: var(--esp-3);
+    margin-top: auto;
+    padding: var(--esp-3);
+    border-radius: var(--raio-md);
+    background: var(--marinho-800);
+}
+
+.avatar {
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    flex: none;
+    border-radius: 50%;
+    background: var(--rosa-500);
+    color: #FFFFFF;
+    font-family: var(--fonte-titulo);
+    font-weight: 600;
+}
+
+.menu-usuario-dados {
+    flex: 1;
+    min-width: 0;
+    line-height: 1.3;
+}
+
+.menu-usuario-dados strong {
+    display: block;
+    overflow: hidden;
+    color: #FFFFFF;
+    font-size: var(--texto-sm);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.menu-usuario-dados span {
+    display: block;
+    overflow: hidden;
+    color: var(--marinho-200);
+    font-size: var(--texto-xs);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.menu-sair {
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    flex: none;
+    border-radius: var(--raio-sm);
+    color: var(--marinho-200);
+}
+
+.menu-sair:hover {
+    background: var(--marinho-700);
+    color: #FFFFFF;
+}
+
+.menu-sair svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* ---------- Barra superior ---------- */
+.app-principal {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.app-topo {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: var(--esp-4);
+    min-height: 64px;
+    padding: 0 var(--esp-6);
+    border-bottom: 1px solid var(--borda);
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(10px);
+}
+
+.app-topo .botao:last-child {
+    margin-left: auto;
+}
+
+.app-menu-botao {
+    display: none;
+}
+
+.trilha ol {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--esp-2);
+    padding: 0;
+    color: var(--texto-suave);
+    font-size: var(--texto-sm);
+    list-style: none;
+}
+
+.trilha li + li::before {
+    content: '/';
+    margin-right: var(--esp-2);
+    color: var(--borda-forte);
+}
+
+.trilha a {
+    color: var(--texto-suave);
+    text-decoration: none;
+}
+
+.trilha a:hover {
+    color: var(--rosa-600);
+}
+
+.trilha [aria-current='page'] {
+    color: var(--texto);
+    font-weight: 700;
+}
+
+/* ---------- Conteúdo ---------- */
+.app-conteudo {
+    width: 100%;
+    max-width: 1240px;
+    padding: var(--esp-6);
+}
+
+.pagina-cabecalho {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: var(--esp-4);
+    margin-bottom: var(--esp-6);
+}
+
+.pagina-cabecalho h1 {
+    font-size: var(--texto-2xl);
+    font-weight: 700;
+}
+
+.pagina-cabecalho .contexto {
+    margin-bottom: var(--esp-1);
+    color: var(--rosa-600);
+    font-size: var(--texto-sm);
+    font-weight: 700;
+}
+
+.pagina-cabecalho .descricao {
+    margin-top: var(--esp-1);
+    color: var(--texto-suave);
+}
+
+.pagina-acoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--esp-3);
+}
+
+.grade-indicadores {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: var(--esp-4);
+    margin-bottom: var(--esp-5);
+}
+
+.grade-paineis {
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+    gap: var(--esp-5);
+    align-items: start;
+}
+
+@media (max-width: 1180px) {
+    .grade-paineis {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+.formulario-pagina {
+    max-width: 920px;
+}
+
+/* ---------- Celular e tablet: menu vira gaveta ---------- */
+.app-fundo-menu {
+    display: none;
+}
+
+@media (max-width: 1024px) {
+    .app {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .app-lateral {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 40;
+        width: 280px;
+        transform: translateX(-100%);
+        /* visibility tira os links fechados da ordem do Tab. */
+        visibility: hidden;
+        transition: transform 220ms ease, visibility 220ms;
+    }
+
+    .menu-aberto .app-lateral {
+        transform: none;
+        visibility: visible;
+        box-shadow: var(--sombra-lg);
+    }
+
+    .menu-aberto .app-fundo-menu {
+        position: fixed;
+        inset: 0;
+        z-index: 30;
+        display: block;
+        background: rgba(36, 32, 63, 0.45);
+    }
+
+    .app-menu-botao {
+        display: inline-flex;
+    }
+
+    .app-topo {
+        padding: 0 var(--esp-4);
+    }
+
+    .app-conteudo {
+        padding: var(--esp-5) var(--esp-4);
+    }
+}
+
+@media (max-width: 560px) {
+    .trilha {
+        display: none;
+    }
+
+    .grade-indicadores {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: var(--esp-3);
+    }
+
+    .indicador {
+        padding: var(--esp-4);
+    }
+
+    .indicador-numero {
+        font-size: 1.75rem;
+    }
+
+    .pagina-acoes,
+    .pagina-acoes .botao {
+        width: 100%;
+    }
+}

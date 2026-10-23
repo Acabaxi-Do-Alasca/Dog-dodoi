@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br" data-protegida>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendar consulta | Dog Dodói</title>
+    <link rel="icon" href="../img/marca.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Outfit:wght@500;600;700&display=swap">
+    <link rel="stylesheet" href="../styles/design/tokens.css">
+    <link rel="stylesheet" href="../styles/design/base.css">
+    <link rel="stylesheet" href="../styles/design/components.css">
+    <link rel="stylesheet" href="../styles/design/admin.css">
+    <script src="../js/storage.js"></script>
+    <script src="../js/util.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/icones.js" defer></script>
+    <script src="../js/layout.js" defer></script>
+    <script src="../js/consulta.js" defer></script>
+</head>
+<body class="app" data-secao="consultas">
+    <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
+    <aside class="app-lateral" id="menu-lateral"></aside>
+
+    <div class="app-principal">
+        <header class="app-topo">
+            <button type="button" class="botao botao-secundario botao-pequeno app-menu-botao" data-abrir-menu
+                    aria-controls="menu-lateral" aria-expanded="false" data-icone="menu">Menu</button>
+            <nav class="trilha" aria-label="Você está em">
+                <ol>
+                    <li><a href="dashBoard.html">Painel</a></li>
+                    <li><a href="listaConsultas.html">Consultas</a></li>
+                    <li><span aria-current="page" id="trilha-atual">Agendar</span></li>
+                </ol>
+            </nav>
+            <a class="botao botao-fantasma botao-pequeno" href="index.html" data-icone="site">Ver site</a>
+        </header>
+
+        <main class="app-conteudo formulario-pagina" id="conteudo">
+            <div class="pagina-cabecalho">
+                <div>
+                    <p class="contexto">Consultas</p>
+                    <h1 id="titulo">Agendar consulta</h1>
+                    <p class="descricao">Campos com <span class="obrigatorio">*</span> são obrigatórios.</p>
+                </div>
+            </div>
+
+            <form id="form-consulta" class="painel">
+                <div class="painel-corpo">
+                    <fieldset class="grupo-form">
+                        <legend>Cliente</legend>
+                        <p class="grupo-form-descricao">Escolha o tutor. Não encontrou? <a href="cliente.html">Cadastre um novo cliente</a>.</p>
+                        <div class="grade-campos">
+                            <div class="campo">
+                                <label for="cliente">Cliente <span class="obrigatorio" aria-hidden="true">*</span></label>
+                                <select class="controle" id="cliente" name="clienteId" required></select>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="grupo-form">
+                        <legend>Horário</legend>
+                        <p class="grupo-form-descricao">A clínica atende 24 horas. Só não é possível marcar dois atendimentos no mesmo horário.</p>
+                        <div class="grade-campos">
+                            <div class="campo col-6">
+                                <label for="data">Data <span class="obrigatorio" aria-hidden="true">*</span></label>
+                                <input class="controle" type="date" id="data" name="data" required>
+                            </div>
+                            <div class="campo col-6">
+                                <label for="horas">Hora <span class="obrigatorio" aria-hidden="true">*</span></label>
+                                <input class="controle" type="time" id="horas" name="hora" required>
+                            </div>
+                            <div class="campo">
+                                <label for="observacoes">Observações <span class="opcional">(opcional)</span></label>
+                                <textarea class="controle" id="observacoes" name="observacoes" placeholder="Nome do pet, sintomas, vacinas..."></textarea>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+
+                <div class="painel-rodape">
+                    <button type="button" class="botao botao-secundario" id="cancelar">Cancelar</button>
+                    <button type="submit" class="botao botao-primario" id="salvar">Salvar consulta</button>
+                </div>
+            </form>
+        </main>
+    </div>
+</body>
+</html>
