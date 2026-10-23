@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br" data-protegida>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultas | Dog Dodói</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap">
+    <link rel="stylesheet" href="../styles/lista.css">
+    <link rel="stylesheet" href="../styles/componentes.css">
+    <script src="../js/storage.js"></script>
+    <script src="../js/util.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/listaConsultas.js" defer></script>
+</head>
+<body>
+    <header>
+        <figure>
+            <a href="dashBoard.html"><img src="../img/logo.png" alt="Dog Dodói - voltar ao painel"></a>
+        </figure>
+        <nav>
+            <a href="index.html" data-sair>Sair</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1 class="titulo-pagina">Consultas</h1>
+
+        <div class="barra-ferramentas">
+            <label for="filtro">Mostrar:</label>
+            <select id="filtro">
+                <option value="agendadas">Próximas</option>
+                <option value="realizadas">Realizadas</option>
+                <option value="canceladas">Canceladas</option>
+                <option value="todas">Todas</option>
+            </select>
+            <a href="consultas.html" class="botao">+ Nova consulta</a>
+        </div>
+
+        <table class="tabela">
+            <thead>
+                <tr><th>Data</th><th>Hora</th><th>Cliente</th><th>Observações</th><th>Situação</th><th><span class="oculto">Ações</span></th></tr>
+            </thead>
+            <tbody id="consultas"></tbody>
+        </table>
+    </main>
+</body>
+</html>

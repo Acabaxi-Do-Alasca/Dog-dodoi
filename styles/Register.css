@@ -11,33 +11,19 @@
   header {
     background-color: #D8F1FB82;
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
+    justify-content: space-between;
     align-items: center;
-    padding: 10px;
   }
   
   img {
     width: 63px;
     height: 50px;
-    margin: 11px 0px 12px 20px;
-  }
-  
-  header a {
-    background: #EA1C81;
-    border-radius: 18px;
-    padding: 4px 15px 5px 15px;
-    color: #FFFFFF;
-    font-size: 20px;
-    font-weight: 500;
-  }
-  
-  header nav {
-    margin: 25px 20px 25px 0px;
+    margin: 11px 0px 12px 90px;
   }
   
   #titulo {
-    margin: 40px 0px 20px 0px;
+    margin: 77px 0px 29px 0px;
     color: #000000;
     font-family: 'Roboto', sans-serif;
     font-size: 30px;
@@ -48,8 +34,7 @@
   
   form input {
     display: block !important;
-    width: 98vw;
-    max-width: 500px;
+    width: 500px;
     height: 39px;
     border: 1px solid rgba(0, 0, 0, 0.19);
     box-shadow: 0px 8px 8px -5px rgba(0, 0, 0, 0.2);
@@ -64,23 +49,21 @@
     align-items: center;
   }
   
-  #escrever {
+  .escrever {
     margin-top: 19px;
     color: #424E66;
   }
   
   button {
-    width: 100%;
-    max-width: 500px;
+    width: 500px;
     height: 41px;
     background-color: #EA1C81;
     border-radius: 18px;
     margin-top: 39px;
-    margin-bottom: 19px;
+    margin-bottom: 50px;
   }
   
-  form p {
-    margin: none !important;
+  form button {
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
     font-size: 20px;
@@ -91,24 +74,66 @@
     cursor: pointer;
   }
   
-  form a {
-    background-color: #EA1C81;
-    border-radius: 18px;
-    margin-top: 39px;
+  a {
+    text-decoration: none;
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
     font-size: 20px;
-    color: #FFFFFF;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    max-width: 500px;
-    height: 41px;
-    margin-bottom: 20px;
-    margin-top: 0px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
+    color: #000000;
+  }
+  
+  nav {
+    margin-bottom: 64px;
+  }
+  
+  @media (max-width: 768px) {
+    header {
+      justify-content: center;
+    }
+  
+    img {
+      margin: 11px 0;
+    }
+  
+    nav {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+  
+    #titulo {
+      margin: 40px 0;
+      font-size: 24px;
+    }
+  
+    form input {
+      width: 90%;
+      max-width: 500px;
+    }
+  
+    button {
+      width: 90%;
+      max-width: 500px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    img {
+      margin: 11px 0;
+    }
+  
+    #titulo {
+      margin: 20px 0;
+      font-size: 20px;
+    }
+  
+    form input {
+      width: 90%;
+      max-width: 300px;
+    }
+  
+    button {
+      width: 90%;
+      max-width: 300px;
+    }
   }
   

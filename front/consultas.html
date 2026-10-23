@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br" data-protegida>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendar consulta | Dog Dodói</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap">
+    <link rel="stylesheet" href="../styles/consulta.css">
+    <link rel="stylesheet" href="../styles/componentes.css">
+    <script src="../js/storage.js"></script>
+    <script src="../js/util.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/consulta.js" defer></script>
+</head>
+<body>
+    <header>
+        <figure>
+            <a href="dashBoard.html"><img src="../img/logo.png" alt="Dog Dodói - voltar ao painel"></a>
+        </figure>
+        <nav>
+            <a href="index.html" data-sair>Sair</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1 id="registro">Agendar uma consulta</h1>
+        <form id="form-consulta">
+            <section class="form">
+                <div id="Nome-completo">
+                    <label for="cliente">Cliente</label>
+                    <select id="cliente" name="clienteId" required></select>
+                    <a href="cliente.html" id="novo-cliente">+ Cadastrar novo cliente</a>
+                </div>
+                <div id="date">
+                    <label for="data">Data da consulta</label>
+                    <input type="date" id="data" name="data" required>
+                </div>
+                <div id="hora">
+                    <label for="horas">Hora da consulta</label>
+                    <input type="time" id="horas" name="hora" required>
+                </div>
+                <div id="adicional">
+                    <label for="observacoes">Observações (opcional)</label>
+                    <textarea id="observacoes" name="observacoes" placeholder="Nome do pet, sintomas, vacinas..."></textarea>
+                </div>
+            </section>
+            <section class="button">
+                <div>
+                    <button type="submit" id="button1">Salvar</button>
+                </div>
+                <div>
+                    <button type="button" id="button2">Cancelar</button>
+                </div>
+            </section>
+        </form>
+    </main>
+</body>
+</html>
