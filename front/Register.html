@@ -3,65 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro | Dog Dodói</title>
+    <title>Criar conta | Dog Dodói</title>
+    <link rel="icon" href="../img/marca.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap">
-    <link rel="stylesheet" href="../styles/Register.css">
-    <link rel="stylesheet" href="../styles/componentes.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Outfit:wght@500;600;700&display=swap">
+    <link rel="stylesheet" href="../styles/design/tokens.css">
+    <link rel="stylesheet" href="../styles/design/base.css">
+    <link rel="stylesheet" href="../styles/design/components.css">
+    <link rel="stylesheet" href="../styles/design/public.css">
     <script src="../js/storage.js"></script>
     <script src="../js/util.js"></script>
     <script src="../js/auth.js"></script>
+    <script src="../js/icones.js" defer></script>
     <script src="../js/registro.js" defer></script>
 </head>
 <body>
-    <header>
-        <figure>
-            <a href="index.html" id="link-logo"><img src="../img/logo.png" alt="Dog Dodói - página inicial"></a>
-        </figure>
-    </header>
-    <main>
-        <h1 id="titulo">Criar conta</h1>
+    <div class="acesso">
+        <aside class="acesso-lateral">
+            <a class="marca marca-clara" href="index.html">
+                <img class="marca-simbolo" src="../img/marca.svg" alt="">
+                <span class="marca-texto">
+                    <span class="marca-nome">dog<b>dodói</b></span>
+                    <span class="marca-sub">Hospital veterinário</span>
+                </span>
+            </a>
+            <h2>Organize o atendimento <span>em um só lugar.</span></h2>
+            <p>Com uma conta você cadastra clientes, agenda consultas e acompanha os pedidos de avaliação gratuita.</p>
+            <img class="acesso-foto" src="../img/dog.png" alt="" width="303" height="346">
+        </aside>
 
-        <div>
-            <form id="form-registro">
-                <div class="escrever">
-                    <label for="nome">Nome completo:</label>
-                    <input type="text" id="nome" name="nome" required autocomplete="name">
-                </div>
+        <main class="acesso-conteudo">
+            <div class="acesso-topo">
+                <a class="marca" href="index.html">
+                    <img class="marca-simbolo" src="../img/marca.svg" alt="">
+                    <span class="marca-texto"><span class="marca-nome">dog<b>dodói</b></span></span>
+                </a>
+                <a class="botao botao-fantasma botao-pequeno" href="index.html" id="link-voltar" data-icone="voltar">Voltar ao site</a>
+            </div>
 
-                <div class="escrever">
-                    <label for="email">E-mail:</label>
-                    <input type="email" id="email" name="email" required autocomplete="email">
-                </div>
+            <div class="acesso-form">
+                <p class="sobretitulo">Área da equipe</p>
+                <h1 id="titulo">Criar conta</h1>
+                <p id="descricao">Preencha seus dados para acessar o painel.</p>
 
-                <div class="escrever">
-                    <label for="usuario">Nome de usuário:</label>
-                    <input type="text" id="usuario" name="usuario" required autocomplete="username"
-                           pattern="[A-Za-z0-9._\-]{3,}" title="Pelo menos 3 caracteres: letras, números, ponto, hífen ou sublinhado.">
-                </div>
+                <form id="form-registro">
+                    <div class="campo">
+                        <label for="nome">Nome completo <span class="obrigatorio" aria-hidden="true">*</span></label>
+                        <input class="controle" type="text" id="nome" name="nome" required autocomplete="name">
+                    </div>
+                    <div class="campo">
+                        <label for="email">E-mail <span class="obrigatorio" aria-hidden="true">*</span></label>
+                        <input class="controle" type="email" id="email" name="email" required autocomplete="email">
+                    </div>
+                    <div class="campo">
+                        <label for="usuario">Nome de usuário <span class="obrigatorio" aria-hidden="true">*</span></label>
+                        <input class="controle" type="text" id="usuario" name="usuario" required autocomplete="username"
+                               pattern="[A-Za-z0-9._\-]{3,}" aria-describedby="ajuda-usuario"
+                               title="Pelo menos 3 caracteres: letras, números, ponto, hífen ou sublinhado.">
+                        <span class="campo-ajuda" id="ajuda-usuario">Pelo menos 3 caracteres: letras, números, ponto, hífen ou sublinhado.</span>
+                    </div>
+                    <div class="grade-campos">
+                        <div class="campo col-6">
+                            <label for="senha">Senha <span class="obrigatorio" aria-hidden="true">*</span></label>
+                            <input class="controle" type="password" id="senha" name="senha" required minlength="6"
+                                   autocomplete="new-password" aria-describedby="ajuda-senha">
+                            <span class="campo-ajuda" id="ajuda-senha">Mínimo de 6 caracteres.</span>
+                        </div>
+                        <div class="campo col-6">
+                            <label for="confirmar-senha">Confirmar senha <span class="obrigatorio" aria-hidden="true">*</span></label>
+                            <input class="controle" type="password" id="confirmar-senha" name="confirmarSenha" required autocomplete="new-password">
+                        </div>
+                    </div>
+                    <button type="submit" class="botao botao-primario botao-grande botao-bloco" id="botao-registrar">Criar conta</button>
+                </form>
 
-                <div class="escrever">
-                    <label for="senha">Criar senha:</label>
-                    <input type="password" id="senha" name="senha" required minlength="6" autocomplete="new-password">
-                </div>
-
-                <div class="escrever">
-                    <label for="confirmar-senha">Confirmar senha:</label>
-                    <input type="password" id="confirmar-senha" name="confirmarSenha" required autocomplete="new-password">
-                </div>
-
-                <div>
-                    <button type="submit">Criar conta</button>
-                </div>
-
-                <div>
-                    <nav id="link-rodape">
-                        <a href="login.html">Já tenho cadastro</a>
-                    </nav>
-                </div>
-            </form>
-        </div>
-    </main>
+                <p class="acesso-alternativa" id="alternativa">Já tem cadastro? <a href="login.html">Entrar</a></p>
+            </div>
+        </main>
+    </div>
 </body>
 </html>

@@ -60,6 +60,14 @@ const Util = {
         return [...consultas].sort((a, b) => `${a.data} ${a.hora}`.localeCompare(`${b.data} ${b.hora}`) * ordem);
     },
 
+    // Linha de "estado vazio" para tabelas, com ação opcional { href, texto }.
+    linhaVazia(colunas, titulo, texto, acao) {
+        return Util.el('tr', {}, Util.el('td', { colspan: colunas, class: 'vazio' },
+            Util.el('strong', {}, titulo),
+            texto,
+            acao ? Util.el('div', {}, Util.el('a', { href: acao.href, class: 'botao botao-primario botao-pequeno' }, acao.texto)) : null));
+    },
+
     notificar(texto, tipo = 'sucesso') {
         const aviso = Util.el('div', { class: `toast toast-${tipo}`, role: tipo === 'erro' ? 'alert' : 'status' }, texto);
         document.body.append(aviso);

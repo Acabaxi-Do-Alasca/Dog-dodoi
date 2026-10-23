@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia visual | Dog Dodói</title>
+    <link rel="icon" href="../img/marca.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Outfit:wght@500;600;700&display=swap">
+    <link rel="stylesheet" href="../styles/design/tokens.css">
+    <link rel="stylesheet" href="../styles/design/base.css">
+    <link rel="stylesheet" href="../styles/design/components.css">
+    <link rel="stylesheet" href="../styles/design/public.css">
+    <style>
+        /* Só para a página do guia. */
+        body { background: var(--fundo); }
+        .guia { padding: var(--esp-7) 0 var(--esp-8); }
+        .guia-cabecalho { margin-bottom: var(--esp-7); }
+        .guia-cabecalho h1 { margin: var(--esp-3) 0 var(--esp-2); font-size: var(--texto-3xl); }
+        .guia section { margin-bottom: var(--esp-6); }
+        .guia h2 { margin-bottom: var(--esp-4); font-size: var(--texto-xl); }
+        .guia h3 { margin: var(--esp-5) 0 var(--esp-3); color: var(--texto-suave); font-size: var(--texto-sm); letter-spacing: 0.06em; text-transform: uppercase; }
+        .amostras { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: var(--esp-3); }
+        .amostra { overflow: hidden; border: 1px solid var(--borda); border-radius: var(--raio-md); background: var(--superficie); font-size: var(--texto-sm); }
+        .amostra span { display: block; height: 64px; }
+        .amostra code { display: block; padding: var(--esp-2) var(--esp-3); color: var(--texto-suave); }
+        .linha { display: flex; flex-wrap: wrap; align-items: center; gap: var(--esp-3); }
+        .lado-escuro { padding: var(--esp-5); border-radius: var(--raio-md); background: var(--marinho-900); }
+    </style>
+    <script src="../js/util.js"></script>
+    <script src="../js/icones.js" defer></script>
+</head>
+<body>
+    <main class="guia">
+        <div class="container">
+            <div class="guia-cabecalho">
+                <a class="marca" href="index.html">
+                    <img class="marca-simbolo" src="../img/marca.svg" alt="">
+                    <span class="marca-texto">
+                        <span class="marca-nome">dog<b>dodói</b></span>
+                        <span class="marca-sub">Hospital veterinário</span>
+                    </span>
+                </a>
+                <h1>Guia visual</h1>
+                <p class="texto-suave">Cores, tipografia e componentes usados no site e no painel. Os valores ficam em <code>styles/design/tokens.css</code> e os componentes em <code>styles/design/components.css</code>.</p>
+            </div>
+
+            <section class="painel painel-corpo">
+                <h2>Cores</h2>
+                <div class="amostras">
+                    <div class="amostra"><span style="background: var(--marinho-900)"></span><code>--marinho-900</code></div>
+                    <div class="amostra"><span style="background: var(--marinho-700)"></span><code>--marinho-700</code></div>
+                    <div class="amostra"><span style="background: var(--rosa-600)"></span><code>--rosa-600</code></div>
+                    <div class="amostra"><span style="background: var(--rosa-500)"></span><code>--rosa-500</code></div>
+                    <div class="amostra"><span style="background: var(--rosa-100)"></span><code>--rosa-100</code></div>
+                    <div class="amostra"><span style="background: var(--lavanda-100)"></span><code>--lavanda-100</code></div>
+                    <div class="amostra"><span style="background: var(--fundo)"></span><code>--fundo</code></div>
+                    <div class="amostra"><span style="background: var(--sucesso)"></span><code>--sucesso</code></div>
+                    <div class="amostra"><span style="background: var(--erro)"></span><code>--erro</code></div>
+                </div>
+                <p class="campo-ajuda" style="margin-top: var(--esp-3)">Use <code>--rosa-600</code> para botões e links (contraste AA com texto branco). O <code>--rosa-500</code> é a cor original da marca, para títulos grandes e detalhes.</p>
+            </section>
+
+            <section class="painel painel-corpo">
+                <h2>Tipografia</h2>
+                <p style="font-family: var(--fonte-titulo); font-size: var(--texto-hero); font-weight: 700; line-height: 1">Outfit</p>
+                <p class="texto-suave">Títulos em <strong>Outfit</strong>; textos e formulários em <strong>DM Sans</strong>.</p>
+                <h3>Escala</h3>
+                <p style="font-size: var(--texto-3xl); font-family: var(--fonte-titulo); font-weight: 700">Título de página</p>
+                <p style="font-size: var(--texto-xl); font-family: var(--fonte-titulo); font-weight: 600">Título de seção</p>
+                <p>Texto de corpo, usado em parágrafos e tabelas.</p>
+                <p class="texto-suave" style="font-size: var(--texto-sm)">Texto de apoio e descrições.</p>
+                <p class="sobretitulo" style="margin-top: var(--esp-3)">Sobretítulo</p>
+            </section>
+
+            <section class="painel painel-corpo">
+                <h2>Botões</h2>
+                <div class="linha">
+                    <button class="botao botao-primario" type="button">Primário</button>
+                    <button class="botao botao-escuro" type="button">Escuro</button>
+                    <button class="botao botao-secundario" type="button">Secundário</button>
+                    <button class="botao botao-fantasma" type="button">Fantasma</button>
+                    <button class="botao botao-perigo" type="button">Perigo</button>
+                    <button class="botao botao-primario" type="button" disabled>Desabilitado</button>
+                </div>
+                <h3>Tamanhos e ícones</h3>
+                <div class="linha">
+                    <button class="botao botao-primario botao-grande" type="button">Grande</button>
+                    <button class="botao botao-primario" type="button" data-icone="mais">Com ícone</button>
+                    <button class="botao botao-secundario botao-pequeno" type="button">Pequeno</button>
+                </div>
+            </section>
+
+            <section class="painel painel-corpo">
+                <h2>Campos</h2>
+                <div class="grade-campos">
+                    <div class="campo col-6">
+                        <label for="g-normal">Campo obrigatório <span class="obrigatorio" aria-hidden="true">*</span></label>
+                        <input class="controle" id="g-normal" placeholder="Digite aqui">
+                        <span class="campo-ajuda">Texto de ajuda abaixo do campo.</span>
+                    </div>
+                    <div class="campo col-6">
+                        <label for="g-opcional">Campo opcional <span class="opcional">(opcional)</span></label>
+                        <select class="controle" id="g-opcional"><option>Selecione</option><option>Opção</option></select>
+                    </div>
+                    <div class="campo col-6">
+                        <label for="g-erro">Campo com erro</label>
+                        <input class="controle" id="g-erro" type="email" value="email-invalido">
+                        <span class="campo-ajuda">O erro aparece depois que a pessoa interage com o campo.</span>
+                    </div>
+                    <div class="campo col-6">
+                        <label for="g-desab">Desabilitado</label>
+                        <input class="controle" id="g-desab" value="Não editável" disabled>
+                    </div>
+                </div>
+                <h3>Filtros</h3>
+                <fieldset class="filtros">
+                    <legend class="oculto">Exemplo de filtro</legend>
+                    <label class="filtro"><input type="radio" name="g-filtro" checked><span>Selecionado</span></label>
+                    <label class="filtro"><input type="radio" name="g-filtro"><span>Outra opção</span></label>
+                </fieldset>
+            </section>
+
+            <section class="painel painel-corpo">
+                <h2>Situações</h2>
+                <div class="linha">
+                    <span class="selo selo-agendada">Agendada</span>
+                    <span class="selo selo-realizada">Realizada</span>
+                    <span class="selo selo-cancelada">Cancelada</span>
+                    <span class="selo">Neutro</span>
+                </div>
+                <h3>Avisos</h3>
+                <div class="linha">
+                    <button class="botao botao-secundario botao-pequeno" type="button" onclick="Util.notificar('Cliente salvo.')">Mostrar sucesso</button>
+                    <button class="botao botao-secundario botao-pequeno" type="button" onclick="Util.notificar('CPF inválido.', 'erro')">Mostrar erro</button>
+                </div>
+            </section>
+
+            <section class="painel painel-corpo">
+                <h2>Indicadores</h2>
+                <div class="amostras" style="grid-template-columns: repeat(auto-fill, minmax(210px, 1fr))">
+                    <div class="indicador indicador-rosa"><span class="indicador-icone" data-icone="clientes"></span><span class="indicador-numero">12</span><span class="indicador-rotulo">Rosa</span></div>
+                    <div class="indicador indicador-lavanda"><span class="indicador-icone" data-icone="consultas"></span><span class="indicador-numero">8</span><span class="indicador-rotulo">Lavanda</span></div>
+                    <div class="indicador indicador-verde"><span class="indicador-icone" data-icone="check"></span><span class="indicador-numero">5</span><span class="indicador-rotulo">Verde</span></div>
+                    <div class="indicador indicador-vermelho"><span class="indicador-icone" data-icone="cancelada"></span><span class="indicador-numero">1</span><span class="indicador-rotulo">Vermelho</span></div>
+                </div>
+            </section>
+
+            <section class="painel">
+                <div class="painel-cabecalho"><h2>Tabela em painel</h2></div>
+                <div class="barra-ferramentas">
+                    <div class="campo-busca">
+                        <span data-icone="busca"></span>
+                        <label for="g-busca" class="oculto">Buscar</label>
+                        <input class="controle" id="g-busca" type="search" placeholder="Buscar">
+                    </div>
+                    <p class="resumo">2 registros</p>
+                </div>
+                <table class="tabela">
+                    <thead><tr><th scope="col">Nome</th><th scope="col">Situação</th><th scope="col"><span class="oculto">Ações</span></th></tr></thead>
+                    <tbody>
+                        <tr>
+                            <td data-rotulo="Nome"><span class="principal">Exemplo de registro</span><span class="secundario">Informação secundária</span></td>
+                            <td data-rotulo="Situação"><span class="selo selo-agendada">Agendada</span></td>
+                            <td class="acoes"><button class="botao botao-fantasma botao-pequeno" type="button">Editar</button><button class="botao botao-perigo botao-pequeno" type="button">Excluir</button></td>
+                        </tr>
+                        <tr><td colspan="3" class="vazio"><strong>Estado vazio</strong>Explique o que vai aparecer aqui e ofereça a próxima ação.</td></tr>
+                    </tbody>
+                </table>
+                <div class="painel-rodape"><button class="botao botao-secundario" type="button">Cancelar</button><button class="botao botao-primario" type="button">Salvar</button></div>
+            </section>
+
+            <section class="painel painel-corpo">
+                <h2>Marca</h2>
+                <div class="linha">
+                    <span class="marca">
+                        <img class="marca-simbolo" src="../img/marca.svg" alt="">
+                        <span class="marca-texto"><span class="marca-nome">dog<b>dodói</b></span><span class="marca-sub">Hospital veterinário</span></span>
+                    </span>
+                    <span class="lado-escuro">
+                        <span class="marca marca-clara">
+                            <img class="marca-simbolo" src="../img/marca.svg" alt="">
+                            <span class="marca-texto"><span class="marca-nome">dog<b>dodói</b></span><span class="marca-sub">Hospital veterinário</span></span>
+                        </span>
+                    </span>
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+</html>

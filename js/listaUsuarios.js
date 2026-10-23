@@ -13,13 +13,14 @@ function mostrarUsuarios() {
     for (const usuario of Banco.listar('usuarios').sort((a, b) => a.nome.localeCompare(b.nome))) {
         const ehVoce = usuario.id === atual?.id;
         corpoUsuarios.append(Util.el('tr', {},
-            Util.el('td', { 'data-rotulo': 'Nome' }, ehVoce ? `${usuario.nome} (você)` : usuario.nome),
+            Util.el('td', { 'data-rotulo': 'Nome' },
+                Util.el('span', { class: 'principal' }, usuario.nome, ehVoce ? Util.el('span', { class: 'selo selo-agendada' }, 'Você') : null),
+                Util.el('span', { class: 'secundario' }, usuario.email)),
             Util.el('td', { 'data-rotulo': 'Usuário' }, usuario.usuario),
-            Util.el('td', { 'data-rotulo': 'E-mail' }, usuario.email),
             Util.el('td', { 'data-rotulo': 'Cadastrado em' }, Util.formatarData(usuario.criadoEm)),
             Util.el('td', { class: 'acoes' }, Util.el('button', {
                 type: 'button',
-                class: 'botao-acao perigo',
+                class: 'botao botao-perigo botao-pequeno',
                 disabled: ehVoce,
                 title: ehVoce ? 'Você não pode excluir o próprio usuário' : null,
                 onclick: () => excluirUsuario(usuario)

@@ -9,8 +9,10 @@ if (idCliente) {
     const cliente = Banco.buscar('clientes', idCliente);
     if (cliente) {
         document.querySelector('#titulo').textContent = 'Editar cliente';
+        document.querySelector('#trilha-atual').textContent = 'Editar';
         document.title = 'Editar cliente | Dog Dodói';
         Util.preencherFormulario(formCliente, cliente);
+        formCliente.querySelector('[type=submit]').textContent = 'Salvar alterações';
     } else {
         Util.avisarNaProximaPagina('Cliente não encontrado.', 'erro');
         location.replace('listaClientes.html');

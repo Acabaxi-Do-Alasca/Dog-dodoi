@@ -14,13 +14,14 @@ if (clientes.length) {
 } else {
     seletorCliente.append(Util.el('option', { value: '' }, 'Nenhum cliente cadastrado'));
     seletorCliente.disabled = true;
-    formConsulta.querySelector('#button1').disabled = true;
+    document.querySelector('#salvar').disabled = true;
     Util.notificar('Cadastre um cliente antes de agendar uma consulta.', 'erro');
 }
 
 if (idConsulta) {
     if (consultaOriginal) {
-        document.querySelector('#registro').textContent = 'Editar consulta';
+        document.querySelector('#titulo').textContent = 'Editar consulta';
+        document.querySelector('#trilha-atual').textContent = 'Editar';
         document.title = 'Editar consulta | Dog Dodói';
         Util.preencherFormulario(formConsulta, consultaOriginal);
     } else {
@@ -33,7 +34,7 @@ if (idConsulta) {
     if (clientePedido) seletorCliente.value = clientePedido;
 }
 
-document.querySelector('#button2').addEventListener('click', () => {
+document.querySelector('#cancelar').addEventListener('click', () => {
     location.href = 'listaConsultas.html';
 });
 

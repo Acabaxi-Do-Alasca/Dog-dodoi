@@ -4,81 +4,99 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Painel | Dog Dodói</title>
+    <link rel="icon" href="../img/marca.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap">
-    <link rel="stylesheet" href="../styles/DashBoard.css">
-    <link rel="stylesheet" href="../styles/componentes.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Outfit:wght@500;600;700&display=swap">
+    <link rel="stylesheet" href="../styles/design/tokens.css">
+    <link rel="stylesheet" href="../styles/design/base.css">
+    <link rel="stylesheet" href="../styles/design/components.css">
+    <link rel="stylesheet" href="../styles/design/admin.css">
     <script src="../js/storage.js"></script>
     <script src="../js/util.js"></script>
     <script src="../js/auth.js"></script>
+    <script src="../js/icones.js" defer></script>
+    <script src="../js/layout.js" defer></script>
     <script src="../js/dashboard.js" defer></script>
 </head>
-<body>
-    <header>
-        <figure>
-            <a href="dashBoard.html"><img src="../img/logo.png" alt="Dog Dodói - painel"></a>
-        </figure>
-        <nav>
-            <a href="index.html" data-sair>Sair</a>
-        </nav>
-    </header>
+<body class="app" data-secao="painel">
+    <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
+    <aside class="app-lateral" id="menu-lateral"></aside>
 
-<section>
-    <aside>
-        <nav aria-label="Menu do painel">
-            <a href="Register.html">Cadastrar usuários</a>
-            <a href="listaUsuarios.html">Listar usuários</a>
-            <a href="cliente.html">Cadastrar clientes</a>
-            <a href="listaClientes.html">Listar clientes</a>
-            <a href="consultas.html">Cadastrar consultas</a>
-            <a href="listaConsultas.html">Listar consultas</a>
-        </nav>
-    </aside>
+    <div class="app-principal">
+        <header class="app-topo">
+            <button type="button" class="botao botao-secundario botao-pequeno app-menu-botao" data-abrir-menu
+                    aria-controls="menu-lateral" aria-expanded="false" data-icone="menu">Menu</button>
+            <nav class="trilha" aria-label="Você está em">
+                <ol><li><span aria-current="page">Painel</span></li></ol>
+            </nav>
+            <a class="botao botao-fantasma botao-pequeno" href="index.html" data-icone="site">Ver site</a>
+        </header>
 
-    <main>
-        <h1 id="saudacao" class="titulo-pagina">Olá!</h1>
+        <main class="app-conteudo" id="conteudo">
+            <div class="pagina-cabecalho">
+                <div>
+                    <p class="contexto" id="data-hoje">Hoje</p>
+                    <h1 id="saudacao">Olá!</h1>
+                    <p class="descricao">Um resumo do atendimento da clínica.</p>
+                </div>
+                <div class="pagina-acoes">
+                    <a class="botao botao-secundario" href="cliente.html" data-icone="clientes">Novo cliente</a>
+                    <a class="botao botao-primario" href="consultas.html" data-icone="mais">Agendar consulta</a>
+                </div>
+            </div>
 
-        <div class="cards">
-            <a class="card card-clientes" href="listaClientes.html">
-                <span class="card-titulo">Cadastro clientes</span>
-                <strong class="card-numero" id="total-clientes">0</strong>
-                <span class="card-descricao">Clientes cadastrados</span>
-            </a>
-            <a class="card card-usuarios" href="listaUsuarios.html">
-                <span class="card-titulo">Cadastro usuários</span>
-                <strong class="card-numero" id="total-usuarios">0</strong>
-                <span class="card-descricao">Usuários cadastrados</span>
-            </a>
-            <a class="card card-consultas" href="listaConsultas.html">
-                <span class="card-titulo">Cadastro consultas</span>
-                <strong class="card-numero" id="total-agendadas">0</strong>
-                <span class="card-descricao">Consultas agendadas</span>
-            </a>
-            <a class="card card-canceladas" href="listaConsultas.html?filtro=canceladas">
-                <span class="card-titulo">Consultas canceladas</span>
-                <strong class="card-numero" id="total-canceladas">0</strong>
-                <span class="card-descricao">Consultas canceladas</span>
-            </a>
-        </div>
+            <div class="grade-indicadores">
+                <a class="indicador indicador-rosa" href="listaClientes.html">
+                    <span class="indicador-icone" data-icone="clientes"></span>
+                    <span class="indicador-numero" id="total-clientes">0</span>
+                    <span class="indicador-rotulo">Clientes cadastrados</span>
+                </a>
+                <a class="indicador indicador-lavanda" href="listaConsultas.html">
+                    <span class="indicador-icone" data-icone="consultas"></span>
+                    <span class="indicador-numero" id="total-agendadas">0</span>
+                    <span class="indicador-rotulo">Consultas agendadas</span>
+                </a>
+                <a class="indicador indicador-vermelho" href="listaConsultas.html?filtro=canceladas">
+                    <span class="indicador-icone" data-icone="cancelada"></span>
+                    <span class="indicador-numero" id="total-canceladas">0</span>
+                    <span class="indicador-rotulo">Consultas canceladas</span>
+                </a>
+                <a class="indicador indicador-verde" href="listaUsuarios.html">
+                    <span class="indicador-icone" data-icone="usuarios"></span>
+                    <span class="indicador-numero" id="total-usuarios">0</span>
+                    <span class="indicador-rotulo">Usuários da equipe</span>
+                </a>
+            </div>
 
-        <h2 class="subtitulo">Próximas consultas</h2>
-        <table class="tabela">
-            <thead>
-                <tr><th>Data</th><th>Hora</th><th>Cliente</th><th>Observações</th></tr>
-            </thead>
-            <tbody id="proximas-consultas"></tbody>
-        </table>
+            <div class="grade-paineis">
+                <section class="painel" aria-labelledby="titulo-proximas">
+                    <div class="painel-cabecalho">
+                        <h2 id="titulo-proximas">Próximas consultas</h2>
+                        <a class="botao botao-fantasma botao-pequeno" href="listaConsultas.html">Ver todas</a>
+                    </div>
+                    <table class="tabela">
+                        <thead>
+                            <tr><th scope="col">Data e hora</th><th scope="col">Cliente</th><th scope="col">Observações</th></tr>
+                        </thead>
+                        <tbody id="proximas-consultas"></tbody>
+                    </table>
+                </section>
 
-        <h2 class="subtitulo">Pedidos de avaliação grátis</h2>
-        <table class="tabela">
-            <thead>
-                <tr><th>Recebido em</th><th>Nome</th><th>E-mail</th><th>Telefone</th><th><span class="oculto">Ações</span></th></tr>
-            </thead>
-            <tbody id="avaliacoes"></tbody>
-        </table>
-    </main>
-</section>
-
+                <section class="painel" aria-labelledby="titulo-pedidos">
+                    <div class="painel-cabecalho">
+                        <h2 id="titulo-pedidos">Pedidos de avaliação grátis</h2>
+                        <span class="selo" id="total-pedidos">0 pendentes</span>
+                    </div>
+                    <table class="tabela">
+                        <thead>
+                            <tr><th scope="col">Contato</th><th scope="col">Recebido</th><th scope="col"><span class="oculto">Ações</span></th></tr>
+                        </thead>
+                        <tbody id="avaliacoes"></tbody>
+                    </table>
+                </section>
+            </div>
+        </main>
+    </div>
 </body>
 </html>

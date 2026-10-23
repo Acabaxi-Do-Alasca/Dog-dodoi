@@ -1,0 +1,75 @@
+/* Tokens da identidade Dog Dodói: cores, tipografia, espaços e sombras.
+   Todas as outras folhas usam estas variáveis; troque aqui para mudar o tema. */
+:root {
+    /* Marca */
+    --marinho-900: #24203F;
+    --marinho-800: #2F2A50;
+    --marinho-700: #3A3560;
+    --marinho-200: #B9B5D6;
+    --rosa-700: #B0125C;
+    --rosa-600: #D4176F;   /* botões e links: branco por cima passa no AA */
+    --rosa-500: #EA1C81;   /* cor original da marca: destaques e títulos grandes */
+    --rosa-300: #F7A8CE;
+    --rosa-100: #FDE4F0;
+    --rosa-50: #FFF6FA;
+    --lavanda-200: #D5D8F3;
+    --lavanda-100: #E4E6F8;
+    --lavanda-50: #F3F4FD;
+
+    /* Neutros */
+    --texto: #24203F;
+    --texto-suave: #5E5A7A;
+    --texto-fraco: #8A87A3;
+    --borda: #E7E5F0;
+    --borda-forte: #CFCCE0;
+    --superficie: #FFFFFF;
+    --fundo: #F6F5FB;
+
+    /* Estados (sempre acompanhados de texto, nunca só a cor) */
+    --sucesso: #1D7A55;
+    --sucesso-fundo: #DDF5EA;
+    --sucesso-ponto: #34C28B;
+    --erro: #A3242E;
+    --erro-fundo: #FDE3E5;
+    --erro-forte: #C8323C;
+    --info: #3B3A8C;
+    --info-fundo: #E4E6F8;
+    --alerta: #8A5A00;
+    --alerta-fundo: #FFF1CC;
+
+    /* Tipografia */
+    --fonte-titulo: 'Outfit', 'Segoe UI', system-ui, sans-serif;
+    --fonte-corpo: 'DM Sans', 'Segoe UI', system-ui, sans-serif;
+    --texto-xs: 0.75rem;
+    --texto-sm: 0.875rem;
+    --texto-md: 1rem;
+    --texto-lg: 1.125rem;
+    --texto-xl: 1.375rem;
+    --texto-2xl: 1.75rem;
+    --texto-3xl: clamp(2rem, 4vw, 2.5rem);
+    --texto-hero: clamp(2.5rem, 6vw, 4.25rem);
+
+    /* Espaços */
+    --esp-1: 4px;
+    --esp-2: 8px;
+    --esp-3: 12px;
+    --esp-4: 16px;
+    --esp-5: 24px;
+    --esp-6: 32px;
+    --esp-7: 48px;
+    --esp-8: 72px;
+    --largura-max: 1200px;
+
+    /* Formas */
+    --raio-sm: 8px;
+    --raio-md: 12px;
+    --raio-lg: 20px;
+    --raio-xl: 32px;
+    --raio-total: 999px;
+    --sombra-sm: 0 1px 2px rgba(36, 32, 63, 0.06);
+    --sombra-md: 0 8px 24px -8px rgba(36, 32, 63, 0.14);
+    --sombra-lg: 0 24px 48px -16px rgba(36, 32, 63, 0.22);
+    --anel-foco: 0 0 0 3px rgba(212, 23, 111, 0.28);
+
+    --transicao: 160ms ease;
+}

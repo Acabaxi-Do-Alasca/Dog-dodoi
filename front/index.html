@@ -4,108 +4,212 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Dog Dodói: hospital veterinário 24 horas. Marque uma avaliação gratuita para o seu pet.">
-    <title>Dog Dodói</title>
+    <title>Dog Dodói | Hospital veterinário 24 horas</title>
+    <link rel="icon" href="../img/marca.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap">
-    <link rel="stylesheet" href="../styles/style.css">
-    <link rel="stylesheet" href="../styles/style2.css">
-    <link rel="stylesheet" href="../styles/componentes.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Outfit:wght@500;600;700&display=swap">
+    <link rel="stylesheet" href="../styles/design/tokens.css">
+    <link rel="stylesheet" href="../styles/design/base.css">
+    <link rel="stylesheet" href="../styles/design/components.css">
+    <link rel="stylesheet" href="../styles/design/public.css">
     <script src="../js/storage.js"></script>
     <script src="../js/util.js"></script>
     <script src="../js/mascaras.js"></script>
+    <script src="../js/icones.js" defer></script>
     <script src="../js/index.js" defer></script>
 </head>
 <body>
+    <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
 
-    <header id="cabecalho">
-        <figure>
-            <a href="#banner"><img src="../img/logo.png" alt="Dog Dodói"></a>
-        </figure>
-        <nav>
-            <a href="#banner">Início</a>
-            <a href="#beneficios" class="margin-lateral">Benefícios</a>
-            <a href="#form" class="margin-lateral">Avaliação grátis</a>
-            <a href="login.html">Entrar</a>
-        </nav>
+    <div class="faixa-topo">
+        <div class="container">
+            <p><span class="ponto-vivo" aria-hidden="true"></span> Atendimento veterinário 24 horas, todos os dias</p>
+            <a href="#form">Solicitar avaliação</a>
+        </div>
+    </div>
+
+    <header class="site-cabecalho">
+        <div class="container">
+            <a class="marca" href="#inicio">
+                <img class="marca-simbolo" src="../img/marca.svg" alt="">
+                <span class="marca-texto">
+                    <span class="marca-nome">dog<b>dodói</b></span>
+                    <span class="marca-sub">Hospital veterinário</span>
+                </span>
+            </a>
+
+            <button type="button" class="botao botao-secundario botao-pequeno site-menu-botao" id="botao-menu"
+                    aria-controls="site-nav" aria-expanded="false" data-icone="menu">Menu</button>
+
+            <nav class="site-nav" id="site-nav" aria-label="Principal">
+                <a href="#inicio">Início</a>
+                <a href="#quem-somos">Quem somos</a>
+                <a href="#beneficios">Benefícios</a>
+                <a href="#form">Avaliação grátis</a>
+                <a href="login.html" class="botao botao-escuro">Entrar</a>
+            </nav>
+        </div>
     </header>
 
-    <main id="corpo">
-        <section id="banner">
-            <h1>Especialistas apaixonados</h1>
-            <p class="margin-cima-baixo">Os melhores cuidados para o seu amigo mais fiel.</p>
-            <button type="button" id="botao-avaliacao">QUERO UMA AVALIAÇÃO <strong>GRÁTIS</strong></button>
-        </section>
-
-        <section id="bemVindo">
-            <div>
-                <p id="bem" class="negrito">Bem-vindo</p>
-                <p id="dog">Olá, somos a Dog Dodói. Aqui você pode ter certeza de que seus bichinhos de estimação estão em boas mãos.</p>
-            </div>
-
-            <div id="tratamento">
-                <p>Oferecemos tratamento veterinário especializado para animais de estimação. Nosso hospital está sempre disponível para cuidar do seu melhor amigo, pois estamos abertos 24 horas por dia, 7 dias por semana.</p>
-            </div>
-        </section>
-
-        <section id="beneficios">
-            <div class="margin-cima-baixo">
-                <h4>Nossos Benefícios</h4>
-                <p>Oferecemos serviços médicos e cirúrgicos para<br>animais de estimação</p>
-            </div>
-
-            <div id="itens">
+    <main id="conteudo">
+        <section class="hero" id="inicio" aria-labelledby="hero-titulo">
+            <div class="container">
                 <div>
-                    <img src="../img/iconMedico.png" alt="">
-                    <h3>Médicos Especializados</h3>
+                    <p class="sobretitulo">O melhor cuidado para quem você ama</p>
+                    <h1 id="hero-titulo">Amor por eles. <span>Cuidado em cada detalhe.</span></h1>
+                    <p class="hero-texto">Seu melhor amigo merece carinho, atenção e profissionais que cuidam de verdade. Conte com a Dog Dodói 24 horas por dia.</p>
+                    <div class="hero-acoes">
+                        <button type="button" class="botao botao-primario botao-grande" id="botao-avaliacao">Solicitar avaliação grátis</button>
+                        <a href="#beneficios" class="botao botao-secundario botao-grande">Nossos serviços</a>
+                    </div>
                 </div>
-                <div>
-                    <img src="../img/iconConsulta.png" alt="">
-                    <h3>Consultas em casa</h3>
-                </div>
-                <div>
-                    <img src="../img/iconSuporte.png" alt="">
-                    <h3>Suporte ao paciente 24/7</h3>
+
+                <div class="hero-visual">
+                    <div class="hero-foto">
+                        <img src="../img/Section - Banner.png" alt="Cachorro da raça corgi deitado, olhando para o lado" width="1280" height="512">
+                    </div>
+                    <div class="hero-cartao hero-cartao-topo">
+                        <span class="hero-cartao-icone" data-icone="coracao"></span>
+                        <span><strong>Cuidado acolhedor</strong><small>Para quem é da família</small></span>
+                    </div>
+                    <div class="hero-cartao hero-cartao-base">
+                        <span class="ponto-vivo" aria-hidden="true"></span>
+                        <span><strong>24 horas</strong><small>Todos os dias da semana</small></span>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="form">
-            <div id="form-info">
-                <h4>Marque uma avaliação gratuita</h4>
-                <p>Consulte nossos veterinários profissionais hoje.</p>
+        <section class="destaques" aria-label="Destaques">
+            <div class="container">
+                <ul>
+                    <li><span class="destaques-numero">24/7</span> Disponibilidade</li>
+                    <li><span class="destaques-icone" data-icone="coracao"></span> Atendimento humanizado</li>
+                    <li><span class="destaques-icone" data-icone="cruz"></span> Cuidados veterinários</li>
+                    <li><span class="destaques-icone" data-icone="check"></span> Avaliação gratuita</li>
+                </ul>
             </div>
+        </section>
 
-            <div id="form-formulario">
-                <form id="form-avaliacao">
-                    <div>
-                        <label for="nome">Seu nome:</label>
-                        <input type="text" id="nome" name="nome" required autocomplete="name">
+        <section class="secao sobre" id="quem-somos" aria-labelledby="sobre-titulo">
+            <div class="container">
+                <div class="sobre-texto">
+                    <p class="sobretitulo">Quem somos</p>
+                    <h2 id="sobre-titulo">Olá, somos a Dog Dodói</h2>
+                    <p>Aqui você pode ter certeza de que seus bichinhos de estimação estão em boas mãos.</p>
+                    <p>Oferecemos tratamento veterinário especializado para animais de estimação. Nosso hospital está sempre disponível para cuidar do seu melhor amigo, pois estamos abertos 24 horas por dia, 7 dias por semana.</p>
+                </div>
+                <ul class="sobre-lista">
+                    <li>
+                        <span class="destaques-icone" data-icone="relogio"></span>
+                        <span><strong>Sempre abertos</strong><span>Plantão 24 horas, inclusive fins de semana e feriados.</span></span>
+                    </li>
+                    <li>
+                        <span class="destaques-icone" data-icone="cruz"></span>
+                        <span><strong>Serviços médicos e cirúrgicos</strong><span>Do check-up de rotina aos procedimentos mais delicados.</span></span>
+                    </li>
+                    <li>
+                        <span class="destaques-icone" data-icone="coracao"></span>
+                        <span><strong>Cuidado de família</strong><span>Atenção e carinho com cada pet e cada tutor.</span></span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="secao beneficios" id="beneficios" aria-labelledby="beneficios-titulo">
+            <div class="container">
+                <div class="secao-cabecalho">
+                    <p class="sobretitulo">Nossos benefícios</p>
+                    <h2 id="beneficios-titulo">Tudo o que seu pet precisa, em um só lugar</h2>
+                    <p>Oferecemos serviços médicos e cirúrgicos para animais de estimação.</p>
+                </div>
+                <ul class="beneficios-lista">
+                    <li class="beneficio">
+                        <img src="../img/iconMedico.png" alt="" width="120" height="120">
+                        <h3>Médicos especializados</h3>
+                        <p>Veterinários preparados para cuidar do seu pet em cada fase da vida.</p>
+                    </li>
+                    <li class="beneficio">
+                        <img src="../img/iconConsulta.png" alt="" width="120" height="120">
+                        <h3>Consultas em casa</h3>
+                        <p>Atendimento no conforto do seu lar, sem estresse para o seu amigo.</p>
+                    </li>
+                    <li class="beneficio">
+                        <img src="../img/iconSuporte.png" alt="" width="120" height="120">
+                        <h3>Suporte ao paciente 24/7</h3>
+                        <p>Estamos por perto a qualquer hora para tirar dúvidas e acompanhar o tratamento.</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="secao avaliacao" id="form" aria-labelledby="avaliacao-titulo">
+            <div class="container">
+                <div class="avaliacao-caixa">
+                    <div class="avaliacao-info">
+                        <p class="sobretitulo">Avaliação gratuita</p>
+                        <h2 id="avaliacao-titulo">Marque uma avaliação gratuita</h2>
+                        <p>Consulte nossos veterinários profissionais hoje. Deixe seu contato e retornamos para agendar o melhor horário.</p>
+                        <img src="../img/dog.png" alt="" width="303" height="346">
                     </div>
 
-                    <div>
-                        <label for="email">E-mail:</label>
-                        <input type="email" id="email" name="email" required autocomplete="email">
+                    <div class="avaliacao-form">
+                        <h3>Fale com a gente</h3>
+                        <p>Leva menos de um minuto.</p>
+                        <form id="form-avaliacao">
+                            <div class="campo">
+                                <label for="nome">Seu nome <span class="obrigatorio" aria-hidden="true">*</span></label>
+                                <input class="controle" type="text" id="nome" name="nome" required autocomplete="name">
+                            </div>
+                            <div class="campo">
+                                <label for="email">E-mail <span class="obrigatorio" aria-hidden="true">*</span></label>
+                                <input class="controle" type="email" id="email" name="email" required autocomplete="email" placeholder="voce@email.com">
+                            </div>
+                            <div class="campo">
+                                <label for="telefone">Telefone <span class="obrigatorio" aria-hidden="true">*</span></label>
+                                <input class="controle" type="tel" id="telefone" name="telefone" required autocomplete="tel"
+                                       data-mascara="telefone" minlength="14" placeholder="(18) 99123-1234">
+                            </div>
+                            <button type="submit" class="botao botao-primario botao-grande botao-bloco">Quero uma avaliação</button>
+                            <p class="aviso-privacidade">Usamos seus dados apenas para entrar em contato sobre a avaliação.</p>
+                        </form>
                     </div>
-
-                    <div>
-                        <label for="telefone">Telefone:</label>
-                        <input type="tel" id="telefone" name="telefone" required autocomplete="tel"
-                               data-mascara="telefone" minlength="14" placeholder="(18) 99123-1234">
-                    </div>
-
-                    <div>
-                        <button type="submit">Quero uma avaliação</button>
-                    </div>
-                </form>
+                </div>
             </div>
         </section>
     </main>
-    <footer id="rodape">
-        <figure>
-            <img src="../img/logo.png" alt="Dog Dodói">
-        </figure>
-        <p><a href="tel:+5518991231234">(18) 99123-1234</a> / <a href="tel:+551836363636">(18) 3636-3636</a></p>
+
+    <footer class="site-rodape">
+        <div class="container">
+            <div>
+                <a class="marca marca-clara" href="#inicio">
+                    <img class="marca-simbolo" src="../img/marca.svg" alt="">
+                    <span class="marca-texto">
+                        <span class="marca-nome">dog<b>dodói</b></span>
+                        <span class="marca-sub">Hospital veterinário</span>
+                    </span>
+                </a>
+                <p>Atendimento veterinário 24 horas, 7 dias por semana.</p>
+            </div>
+            <div>
+                <h2>Contato</h2>
+                <ul>
+                    <li><a href="tel:+5518991231234">(18) 99123-1234</a></li>
+                    <li><a href="tel:+551836363636">(18) 3636-3636</a></li>
+                </ul>
+            </div>
+            <div>
+                <h2>Navegação</h2>
+                <ul>
+                    <li><a href="#quem-somos">Quem somos</a></li>
+                    <li><a href="#beneficios">Benefícios</a></li>
+                    <li><a href="#form">Avaliação grátis</a></li>
+                    <li><a href="login.html">Área da equipe</a></li>
+                </ul>
+            </div>
+            <p class="rodape-base">Dog Dodói · Hospital veterinário</p>
+        </div>
     </footer>
 </body>
 </html>

@@ -1,14 +1,17 @@
 // Cadastro de usuário. Sem login, cria a conta e já entra no sistema.
-// Logado (vindo de "Cadastrar usuários" do painel), só cria outro usuário.
+// Logado (vindo de "Novo usuário" no painel), só cria outro usuário.
 const formRegistro = document.querySelector('#form-registro');
 const logado = Auth.usuarioAtual();
 
 if (logado) {
-    document.querySelector('#titulo').textContent = 'Cadastrar usuário';
-    document.querySelector('#link-logo').href = 'dashBoard.html';
-    const linkRodape = document.querySelector('#link-rodape a');
-    linkRodape.href = 'listaUsuarios.html';
-    linkRodape.textContent = 'Voltar para a lista de usuários';
+    document.title = 'Novo usuário | Dog Dodói';
+    document.querySelector('#titulo').textContent = 'Novo usuário';
+    document.querySelector('#descricao').textContent = 'A pessoa poderá entrar no painel com o e-mail ou o nome de usuário.';
+    document.querySelector('#botao-registrar').textContent = 'Cadastrar usuário';
+    const voltar = document.querySelector('#link-voltar');
+    voltar.href = 'listaUsuarios.html';
+    voltar.lastChild.textContent = 'Voltar aos usuários';
+    document.querySelector('#alternativa').hidden = true;
 }
 
 formRegistro.addEventListener('submit', async evento => {
